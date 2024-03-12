@@ -38,3 +38,57 @@ void mapper() {
     }
 }
 
+
+void reducer(long tid, Buffer *buffer, int *done){
+    // 假设已经定义了struct TopicTotal topictotal[50];
+    FILE *fp;
+    char *userId, *topic, *scoreStr;
+    char inputTuple[256]; // 增加了容量以容纳更长的输入
+    int score, j, index = 0;
+    int outindex = 0;
+
+    while(1){
+        sem_wait(&buffer[tid].fill_count);
+        sem_wait(&buffer[tid].buf_mutex);
+
+        // 检查是否处理完成
+        if(*done && buffer[tid].inSlotIndex == buffer[tid].outSlotIndex){
+            sem_post(&buffer[tid].buf_mutex);
+            break;
+        }
+
+        strcpy(inputTuple, buffer[tid].Tuples[buffer[tid].outSlotIndex]);
+        buffer[tid].outSlotIndex = (buffer[tid].outSlotIndex + 1) % numOfSlots;
+
+        // 解析从mapper获取的字符串
+        if(sscanf(inputTuple, "(%[^,],%[^,],%d)", userId, topic, &score) == 3){
+            // 在这里，我们假设userId, topic 是足够大的缓冲区
+            // 处理获取的数据
+            int scoreIndex = findScore(topictotal, userId, topic, size);
+            if(scoreIndex == -1){
+                // 添加新记录
+                strcpy(topictotal[index].userID, userId);
+                strcpy(topictotal[index].topic, topic);
+                topictotal[index].score = score;
+                index++;
+                size++;
+            } else {
+                // 更新现有记录的分数
+                topictotal[scoreIndex].score += score;
+            }
+        }
+
+        sem_post(&buffer[tid].buf_mutex);
+        sem_post(&buffer[tid].empty_count);
+    }
+
+    // 输出结果到文件
+    char filename[256];
+    sprintf(filename, "output_%ld.txt", tid);
+    FILE *outfile = fopen(filename, "w");
+    for(j = 0; j < index; j++){
+        fprintf(outfile, "(%s, %s, %d)\n", topictotal[j].userID, topictotal[j].topic, topictotal[j].score);
+    }
+    fclose(outfile);
+}
+
