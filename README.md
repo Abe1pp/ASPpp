@@ -92,3 +92,13 @@ void reducer(long tid, Buffer *buffer, int *done){
     fclose(outfile);
 }
 
+co.c: In function ‘reducer’:
+co.c:336:34: warning: passing argument 3 of ‘fgets’ from incompatible pointer type [-Wincompatible-pointer-types]
+  336 |     while (fgets(bf, sizeof(bf), inputTuple) != NULL){
+      |                                  ^~~~~~~~~~
+      |                                  |
+      |                                  char *
+In file included from co.c:1:
+/usr/include/stdio.h:564:14: note: expected ‘FILE * restrict’ {aka ‘struct _IO_FILE * restrict’} but argument is of type ‘char *’
+  564 | extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+      |              ^~~~~
