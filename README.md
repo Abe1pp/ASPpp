@@ -40,3 +40,7 @@ void mapper() {
         sem_post(&buffer[i].fill_count); // 假设每个reducer都有机会检查并结束
     }
 }
+co.c: In function ‘mapper’:
+co.c:264:23: error: invalid type argument of unary ‘*’ (have ‘Tuple’ {aka ‘struct Tuple’})
+  264 |   addToBuffer(rdrNum, *tuple); // 需要根据实际情况实现该函数
+      | 
