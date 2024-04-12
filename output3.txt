@@ -1,0 +1,13 @@
+[Device 0] Cleared the buffer for device
+[Device 0] Wrote 5 bytes of HELLO
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 5 bytes: HELLO
+[Device 0] Cleared the buffer for device
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 5 bytes: 
+[Device 1] Cleared the buffer for device
+[Device 1] Wrote 32 bytes of KERNEL PROGRAMMING MAY BE TRICKY
+[Device 1] Wrote 20 bytes of , BUT MAY BE FUN TOO
+[Device 1] Changed offset 0 bytes wrt C , curret offset=52
+[Device 1] Changed offset -33 bytes wrt E , curret offset=19
+[Device 1] Read 13 bytes: MAY BE TRICKY

@@ -1,0 +1,7 @@
+device 0 c
+device 0 w LETS WRITE A VERY LONG MESSAGE AND SEE IF WE ARE ABLE TO WRITE BEYOND RAMDISK
+device 0 l B 0
+device 0 r 77
+device 0 c
+device 0 l B 0
+device 0 r 5

@@ -1,0 +1,7 @@
+[Device 0] Cleared the buffer for device
+[Device 0] Wrote 77 bytes of LETS WRITE A VERY LONG MESSAGE AND SEE IF WE ARE ABLE TO WRITE BEYOND RAMDISK
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 77 bytes: LETS WRITE A VERY LONG MESSAGE AND SEE IF WE ARE ABLE TO WRITE BEYOND RAMDISK
+[Device 0] Cleared the buffer for device
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 5 bytes: 

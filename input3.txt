@@ -1,0 +1,13 @@
+device 0 c
+device 0 w HELLO
+device 0 l B 0
+device 0 r 5
+device 0 c
+device 0 l B 0
+device 0 r 5
+device 1 c
+device 1 w KERNEL PROGRAMMING MAY BE TRICKY
+device 1 w , BUT MAY BE FUN TOO
+device 1 l C 0
+device 1 l E -33
+device 1 r 13

@@ -1,0 +1,7 @@
+[Device 0] Cleared the buffer for device
+[Device 0] Wrote 5 bytes of HELLO
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 5 bytes: HELLO
+[Device 0] Cleared the buffer for device
+[Device 0] Changed offset 0 bytes wrt B , curret offset=0
+[Device 0] Read 5 bytes: 

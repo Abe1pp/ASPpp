@@ -1,0 +1,9 @@
+device 0 c
+device 0 w HELLO EVERYONE WHAT A BEAUTIFUL DAY!
+device 0 l B 0
+device 0 r 36
+device 0 l B 36
+device 0 l B 0
+device 0 w HELLO EVERYONE WHAT A BEAUTIFUL DAY!
+device 0 l B 0
+device 0 r 36
