@@ -127,7 +127,7 @@ void executeCommand(Command *c, std::string fname) {
          if (i == -1)
             std::cout << "[Device " << c->devno << "] " << "Error clearing the buffer : " << strerror(en) << "\n";
          else  
-            std::cout << "[Device " << c->devno << "] " << "Cleared the buffer\n";
+            std::cout << "[Device " << c->devno << "] " << "Cleared the buffer for device\n";
      }
      else {
         struct stat buf;
